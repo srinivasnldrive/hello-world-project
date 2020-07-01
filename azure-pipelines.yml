@@ -24,7 +24,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'docker-hub-conn'
-        repository: 'srinivasvista\01-hello-world-rest-api'
+        repository: 'srinivasvista/01-hello-world-rest-api'
         command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
