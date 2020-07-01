@@ -25,6 +25,6 @@ stages:
       inputs:
         containerRegistry: 'docker-hub-conn'
         repository: 'srinivasvista/01-hello-world-rest-api'
-        command: 'build'
+        command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
