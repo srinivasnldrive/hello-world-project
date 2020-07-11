@@ -15,7 +15,7 @@ stages:
 - stage: Build
   displayName: Build image
   jobs:  
-  - job: Build
+  - job: Build1
     displayName: Build
     pool:
       vmImage: 'ubuntu-latest'
@@ -26,5 +26,18 @@ stages:
         containerRegistry: 'docker-hub-conn'
         repository: 'srinivasvista/01-hello-world-rest-api'
         command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: '$(tag)'
+  - job: Build2
+    displayName: Build
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        containerRegistry: 'docker-hub-conn'
+        repository: 'srinivasvista/01-hello-world-rest-api'
+        command: 'build'
         Dockerfile: '**/Dockerfile'
         tags: '$(tag)'
